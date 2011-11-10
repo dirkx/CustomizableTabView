@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		326CF147146C61F400CD92ED /* NSColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 326CF146146C61F400CD92ED /* NSColorExtensions.m */; };
+		326CF14C146C627400CD92ED /* NSViewExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 326CF14B146C627400CD92ED /* NSViewExtensions.m */; };
+		32F6CE38146C01D100E96AC9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F6CE37146C01D100E96AC9 /* Cocoa.framework */; };
+		32F6CE42146C01D100E96AC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32F6CE40146C01D100E96AC9 /* InfoPlist.strings */; };
+		32F6CE44146C01D100E96AC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F6CE43146C01D100E96AC9 /* main.m */; };
+		32F6CE48146C01D100E96AC9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 32F6CE46146C01D100E96AC9 /* Credits.rtf */; };
+		32F6CE4B146C01D100E96AC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F6CE4A146C01D100E96AC9 /* AppDelegate.m */; };
+		32F6CE4E146C01D100E96AC9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F6CE4C146C01D100E96AC9 /* MainMenu.xib */; };
+		32F6CE56146C023E00E96AC9 /* CustomizableTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F6CE55146C023E00E96AC9 /* CustomizableTabView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		326CF145146C61F400CD92ED /* NSColorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSColorExtensions.h; sourceTree = "<group>"; };
+		326CF146146C61F400CD92ED /* NSColorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSColorExtensions.m; sourceTree = "<group>"; };
+		326CF14A146C627400CD92ED /* NSViewExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSViewExtensions.h; sourceTree = "<group>"; };
+		326CF14B146C627400CD92ED /* NSViewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSViewExtensions.m; sourceTree = "<group>"; };
+		32F6CE33146C01D000E96AC9 /* CustomizableTabView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomizableTabView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32F6CE37146C01D100E96AC9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		32F6CE3A146C01D100E96AC9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		32F6CE3B146C01D100E96AC9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		32F6CE3C146C01D100E96AC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		32F6CE3F146C01D100E96AC9 /* CustomizableTabView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CustomizableTabView-Info.plist"; sourceTree = "<group>"; };
+		32F6CE41146C01D100E96AC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		32F6CE43146C01D100E96AC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32F6CE45146C01D100E96AC9 /* CustomizableTabView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomizableTabView-Prefix.pch"; sourceTree = "<group>"; };
+		32F6CE47146C01D100E96AC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		32F6CE49146C01D100E96AC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		32F6CE4A146C01D100E96AC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		32F6CE4D146C01D100E96AC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		32F6CE54146C023E00E96AC9 /* CustomizableTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CustomizableTabView.h; sourceTree = "<group>"; };
+		32F6CE55146C023E00E96AC9 /* CustomizableTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizableTabView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32F6CE30146C01D000E96AC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32F6CE38146C01D100E96AC9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		326CF149146C61FD00CD92ED /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				326CF145146C61F400CD92ED /* NSColorExtensions.h */,
+				326CF146146C61F400CD92ED /* NSColorExtensions.m */,
+				326CF14A146C627400CD92ED /* NSViewExtensions.h */,
+				326CF14B146C627400CD92ED /* NSViewExtensions.m */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
+		32F6CE28146C01D000E96AC9 = {
+			isa = PBXGroup;
+			children = (
+				32F6CE3D146C01D100E96AC9 /* CustomizableTabView */,
+				32F6CE36146C01D000E96AC9 /* Frameworks */,
+				32F6CE34146C01D000E96AC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32F6CE34146C01D000E96AC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32F6CE33146C01D000E96AC9 /* CustomizableTabView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32F6CE36146C01D000E96AC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32F6CE37146C01D100E96AC9 /* Cocoa.framework */,
+				32F6CE39146C01D100E96AC9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32F6CE39146C01D100E96AC9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32F6CE3A146C01D100E96AC9 /* AppKit.framework */,
+				32F6CE3B146C01D100E96AC9 /* CoreData.framework */,
+				32F6CE3C146C01D100E96AC9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		32F6CE3D146C01D100E96AC9 /* CustomizableTabView */ = {
+			isa = PBXGroup;
+			children = (
+				326CF149146C61FD00CD92ED /* Extras */,
+				32F6CE49146C01D100E96AC9 /* AppDelegate.h */,
+				32F6CE4A146C01D100E96AC9 /* AppDelegate.m */,
+				32F6CE54146C023E00E96AC9 /* CustomizableTabView.h */,
+				32F6CE55146C023E00E96AC9 /* CustomizableTabView.m */,
+				32F6CE3E146C01D100E96AC9 /* Supporting Files */,
+			);
+			path = CustomizableTabView;
+			sourceTree = "<group>";
+		};
+		32F6CE3E146C01D100E96AC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				32F6CE4C146C01D100E96AC9 /* MainMenu.xib */,
+				32F6CE3F146C01D100E96AC9 /* CustomizableTabView-Info.plist */,
+				32F6CE40146C01D100E96AC9 /* InfoPlist.strings */,
+				32F6CE43146C01D100E96AC9 /* main.m */,
+				32F6CE45146C01D100E96AC9 /* CustomizableTabView-Prefix.pch */,
+				32F6CE46146C01D100E96AC9 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32F6CE32146C01D000E96AC9 /* CustomizableTabView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32F6CE51146C01D100E96AC9 /* Build configuration list for PBXNativeTarget "CustomizableTabView" */;
+			buildPhases = (
+				32F6CE2F146C01D000E96AC9 /* Sources */,
+				32F6CE30146C01D000E96AC9 /* Frameworks */,
+				32F6CE31146C01D000E96AC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CustomizableTabView;
+			productName = CustomizableTabView;
+			productReference = 32F6CE33146C01D000E96AC9 /* CustomizableTabView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32F6CE2A146C01D000E96AC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 32F6CE2D146C01D000E96AC9 /* Build configuration list for PBXProject "CustomizableTabView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 32F6CE28146C01D000E96AC9;
+			productRefGroup = 32F6CE34146C01D000E96AC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32F6CE32146C01D000E96AC9 /* CustomizableTabView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32F6CE31146C01D000E96AC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32F6CE42146C01D100E96AC9 /* InfoPlist.strings in Resources */,
+				32F6CE48146C01D100E96AC9 /* Credits.rtf in Resources */,
+				32F6CE4E146C01D100E96AC9 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32F6CE2F146C01D000E96AC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32F6CE44146C01D100E96AC9 /* main.m in Sources */,
+				32F6CE4B146C01D100E96AC9 /* AppDelegate.m in Sources */,
+				32F6CE56146C023E00E96AC9 /* CustomizableTabView.m in Sources */,
+				326CF147146C61F400CD92ED /* NSColorExtensions.m in Sources */,
+				326CF14C146C627400CD92ED /* NSViewExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		32F6CE40146C01D100E96AC9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32F6CE41146C01D100E96AC9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		32F6CE46146C01D100E96AC9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32F6CE47146C01D100E96AC9 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		32F6CE4C146C01D100E96AC9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32F6CE4D146C01D100E96AC9 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		32F6CE4F146C01D100E96AC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		32F6CE50146C01D100E96AC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		32F6CE52146C01D100E96AC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CustomizableTabView/CustomizableTabView-Prefix.pch";
+				INFOPLIST_FILE = "CustomizableTabView/CustomizableTabView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		32F6CE53146C01D100E96AC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CustomizableTabView/CustomizableTabView-Prefix.pch";
+				INFOPLIST_FILE = "CustomizableTabView/CustomizableTabView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32F6CE2D146C01D000E96AC9 /* Build configuration list for PBXProject "CustomizableTabView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32F6CE4F146C01D100E96AC9 /* Debug */,
+				32F6CE50146C01D100E96AC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32F6CE51146C01D100E96AC9 /* Build configuration list for PBXNativeTarget "CustomizableTabView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32F6CE52146C01D100E96AC9 /* Debug */,
+				32F6CE53146C01D100E96AC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32F6CE2A146C01D000E96AC9 /* Project object */;
+}
