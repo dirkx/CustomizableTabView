@@ -123,22 +123,29 @@ const double kRadius = 8.f;
     [self rework];
 }
 
-#pragma mark Keep tabs on what gets selected - so our own segmentedControl stays synced.
-
--(void)selectTabViewItem:(NSTabViewItem *)tabViewItem {
-    [super selectTabViewItem:tabViewItem];
-    NSUInteger index = [self indexOfTabViewItem:tabViewItem];
-    [segmentedControl setSelectedSegment:index];
-}
-
--(void)selectTabViewItemAtIndex:(NSInteger)index {
-    [super selectTabViewItemAtIndex:index];
-    [segmentedControl setSelectedSegment:index];
-}
+#pragma mark Callback - to link our sgementedControl to the tabViewItems
 
 -(IBAction)ctrlSelected:(NSSegmentedControl *)sender {
     [super selectTabViewItemAtIndex:[sender selectedSegment]];
 }
+
+#pragma mark Keep tabs on what gets selected - so our own segmentedControl stays synced.
+
+-(void)selectTabViewItem:(NSTabViewItem *)tabViewItem {
+    [super selectTabViewItem:tabViewItem];
+    [segmentedControl setSelectedSegment:[self indexOfTabViewItem:[self selectedTabViewItem]]];
+}
+
+-(void)selectTabViewItemAtIndex:(NSInteger)index {
+    [super selectTabViewItemAtIndex:index];
+    [segmentedControl setSelectedSegment:[self indexOfTabViewItem:[self selectedTabViewItem]]];
+}
+
+-(void)selectTabViewItemWithIdentifier:(id)identifier {
+    [super selectTabViewItemWithIdentifier:identifier];
+    [segmentedControl setSelectedSegment:[self indexOfTabViewItem:[self selectedTabViewItem]]];    
+}
+// skipping selectNext/PreviousTabViewItem - hoping they use above.
 
 -(void)addTabViewItem:(NSTabViewItem *)anItem {
     [super addTabViewItem:anItem];
@@ -151,7 +158,6 @@ const double kRadius = 8.f;
     [self awakeFromNib];
     [self setNeedsDisplay:YES];
 }
-
 #pragma drawing and alignments
 
 -(void)viewWillDraw {
