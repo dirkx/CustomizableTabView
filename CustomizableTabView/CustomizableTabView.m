@@ -43,14 +43,12 @@ const double kRadius = 8.f;
     frame.origin.x = self.bounds.origin.x + self.bounds.size.width / 2 - frame.size.width / 2;
     frame.origin.y = self.bounds.origin.y;
 
-    if (segmentedControl) {
-        [segmentedControl removeFromSuperview];
-        [segmentedControl release];
-    }
-    segmentedControl = [[NSSegmentedControl alloc] initWithFrame:frame];
-                              
-    [segmentedControl setSegmentCount:n];
+    [segmentedControl removeFromSuperview];
+    [segmentedControl release];
+    
+    segmentedControl = [[NSSegmentedControl alloc] initWithFrame:frame];                              
     [segmentedControl setSegmentStyle:NSSegmentStyleTexturedSquare];
+    [segmentedControl setSegmentCount:n];
 
     for(NSUInteger i = 0; i < n; i++) {
         NSTabViewItem * item = (NSTabViewItem *)[items objectAtIndex:i];
@@ -72,11 +70,9 @@ const double kRadius = 8.f;
         }
     }
 #endif
-    
     // Record the 'ideal' max size (and ideally update it when we see
     // more addSubviews coming through).
-    //c
-    
+    //
     NSSize s = ((NSSegmentedCell *)(segmentedControl.cell)).cellSize;
     maxWidth = s.width;
     
@@ -97,7 +93,8 @@ const double kRadius = 8.f;
                                                            alpha:1];
     }
     
-    backgroundColor = [NSColor whiteColor];
+    if (bezelColor == nil)
+        self.bezelColor = [NSColor darkGrayColor];
     
     [segmentedControl setSelectedSegment:[self indexOfTabViewItem:[self selectedTabViewItem]]];
 }
@@ -113,7 +110,7 @@ const double kRadius = 8.f;
     [self addTabViewItem:[[[NSTabViewItem alloc] initWithIdentifier:@"2"] autorelease]];
     
     [[self tabViewItemAtIndex:0] setLabel:@"Tab"];
-    [[self tabViewItemAtIndex:1] setLabel:@"Tab"];
+    [[self tabViewItemAtIndex:1] setLabel:@"View"];
     
     [self rework];
     return self;
@@ -158,6 +155,7 @@ const double kRadius = 8.f;
     [self awakeFromNib];
     [self setNeedsDisplay:YES];
 }
+
 #pragma drawing and alignments
 
 -(void)viewWillDraw {
@@ -172,6 +170,8 @@ const double kRadius = 8.f;
 
     [segmentedControl setFrame:frame];    
 }
+
+#pragma setters and getters for the colours.
 
 -(void)setBackgroundColor:(NSColor *)aColor {
     [backgroundColor release];
@@ -191,6 +191,16 @@ const double kRadius = 8.f;
 
 -(NSColor *)windowBackgroundColor {
     return backgroundColor;
+}
+
+-(void)setBezelColor:(NSColor *)aColor {
+    [bezelColor release];
+    bezelColor = [aColor retain];
+    [self setNeedsDisplay:YES];
+}
+
+-(NSColor*)bezelColor {
+    return bezelColor;
 }
 
 -(void)drawRect:(NSRect)dirtyRect {
@@ -218,13 +228,13 @@ const double kRadius = 8.f;
     inside.size.width -= S;
     inside.size.height -= S;
         
-    CGContextSetStrokeColorWithColor(ctx, [[NSColor darkGrayColor] CGColor]);
+    CGContextSetStrokeColorWithColor(ctx, [bezelColor CGColor]);
     CGContextSetFillColorWithColor(ctx,[windowBackgroundColor CGColor]);
 
     CGContextSaveGState(ctx);
     
     self.shadow = [[[NSShadow alloc] init] autorelease];
-    [self.shadow setShadowColor:[NSColor lightGrayColor]];
+    [self.shadow setShadowColor:bezelColor /* [NSColor lightGrayColor] */];
     [self.shadow setShadowBlurRadius:3];
     [self.shadow setShadowOffset:NSMakeSize(1,-1)];
     [self.shadow set];
@@ -238,12 +248,17 @@ const double kRadius = 8.f;
 
     // The rounded textured style is semi translucent; so we
     // need to paint a bit of background behind it as to avoid
-    // the bezel shining through.
+    // the bezel shining through. We also acknowledge that 
+    // it has round edges here.
     //
     CGRect barFrame =  segmentedControl.frame;
-    barFrame.origin.y += 4.0;
-    barFrame.size.height -= 8.0;
-    CGContextFillRect(ctx, barFrame);
+    barFrame.origin.x += 2.0; 
+    barFrame.origin.y += 2.0;
+    barFrame.size.width -= 4.0;  
+    barFrame.size.height -= 5.0;
+	CGPathRef barPath = [self newPathForRoundedRect:barFrame radius:2.0];
+    CGContextAddPath(ctx, barPath); CGContextClosePath(ctx);
+	CGContextFillPath(ctx);
 
     // Remove shadow again - and draw a very thin outline around it all.
     //
@@ -256,9 +271,11 @@ const double kRadius = 8.f;
 	CGContextStrokePath(ctx);
 
     // and wipe the line behind the bezel again.
-    CGContextFillRect(ctx, barFrame);
+    CGContextAddPath(ctx, barPath); CGContextClosePath(ctx);
+	CGContextFillPath(ctx);
 
 	CGPathRelease(roundedRectPath);
+	CGPathRelease(barPath);
     
     [super drawRect:dirtyRect];
 }
@@ -266,8 +283,8 @@ const double kRadius = 8.f;
     
     self.backgroundColor = nil;
     self.windowBackgroundColor = nil;
+    self.bezelColor = nil;
     self.segmentedControl = nil;
-    
     [super dealloc];
 }
 @end

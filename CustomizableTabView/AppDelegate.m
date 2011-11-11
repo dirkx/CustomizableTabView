@@ -10,15 +10,24 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window, tv, colorWell;
+@synthesize window = _window, tv, colorWell, bezelColorWell;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     colorWell.color = tv.backgroundColor;
+    bezelColorWell.color = tv.bezelColor;
+    
+    // [NSColor setIgnoresAlpha:NO];
+    [[NSColorPanel sharedColorPanel] setShowsAlpha:YES];
+
 }
 
--(IBAction)setColour:(id)sender {
-    tv.backgroundColor = colorWell.color;
+-(IBAction)setColour:(NSColorWell*)sender {
+    tv.backgroundColor = sender.color;
+}
+
+-(IBAction)setBezelColour:(NSColorWell*)sender {
+    tv.bezelColor = sender.color;
 }
 
 -(IBAction)addItem:(id)sender {

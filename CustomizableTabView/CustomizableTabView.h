@@ -23,11 +23,12 @@
 
 @interface CustomizableTabView : NSTabView {
     NSSegmentedControl *segmentedControl;
-    NSColor *backgroundColor, *windowBackgroundColor;
+    NSColor *backgroundColor, *windowBackgroundColor, *bezelColor;
+@private
     double maxWidth;
 }
 
-@property (retain) NSColor *backgroundColor, *windowBackgroundColor;
+@property (retain) NSColor *backgroundColor, *windowBackgroundColor, *bezelColor;
 @property (retain) NSSegmentedControl *segmentedControl;
 
 @end
