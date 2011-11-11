@@ -10,11 +10,15 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window, tv;
+@synthesize window = _window, tv, colorWell;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    colorWell.color = tv.backgroundColor;
+}
+
+-(IBAction)setColour:(id)sender {
+    tv.backgroundColor = colorWell.color;
 }
 
 -(IBAction)addItem:(id)sender {

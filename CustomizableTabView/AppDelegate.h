@@ -11,12 +11,15 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     CustomizableTabView * tv;
+    NSColorWell *colorWell;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet CustomizableTabView * tv;
+@property (assign) IBOutlet NSColorWell *colorWell;
 
 -(IBAction)addItem:(id)sender;
 -(IBAction)removeItem:(id)sender;
+-(IBAction)setColour:(id)sender;
 
 @end
