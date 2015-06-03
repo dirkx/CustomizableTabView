@@ -44,7 +44,6 @@ const double kRadius = 8.f;
     frame.origin.y = self.bounds.origin.y;
 
     [segmentedControl removeFromSuperview];
-    [segmentedControl release];
     
     segmentedControl = [[NSSegmentedControl alloc] initWithFrame:frame];                              
     [segmentedControl setSegmentStyle:NSSegmentStyleTexturedSquare];
@@ -106,8 +105,8 @@ const double kRadius = 8.f;
     if (self == nil)
         return nil;
     
-    [self addTabViewItem:[[[NSTabViewItem alloc] initWithIdentifier:@"1"] autorelease]];
-    [self addTabViewItem:[[[NSTabViewItem alloc] initWithIdentifier:@"2"] autorelease]];
+    [self addTabViewItem:[[NSTabViewItem alloc] initWithIdentifier:@"1"] ];
+    [self addTabViewItem:[[NSTabViewItem alloc] initWithIdentifier:@"2"] ];
     
     [[self tabViewItemAtIndex:0] setLabel:@"Tab"];
     [[self tabViewItemAtIndex:1] setLabel:@"View"];
@@ -174,8 +173,7 @@ const double kRadius = 8.f;
 #pragma setters and getters for the colours.
 
 -(void)setBackgroundColor:(NSColor *)aColor {
-    [backgroundColor release];
-    backgroundColor = [aColor retain];
+    backgroundColor = aColor;
     [self setNeedsDisplay:YES];
 }
 
@@ -184,8 +182,7 @@ const double kRadius = 8.f;
 }
 
 -(void)setWindowBackgroundColor:(NSColor *)aColor {
-    [windowBackgroundColor release];
-    windowBackgroundColor = [aColor retain];
+    windowBackgroundColor = aColor;
     [self setNeedsDisplay:YES];
 }
 
@@ -194,8 +191,7 @@ const double kRadius = 8.f;
 }
 
 -(void)setBezelColor:(NSColor *)aColor {
-    [bezelColor release];
-    bezelColor = [aColor retain];
+    bezelColor = aColor;
     [self setNeedsDisplay:YES];
 }
 
@@ -233,7 +229,7 @@ const double kRadius = 8.f;
 
     CGContextSaveGState(ctx);
     
-    self.shadow = [[[NSShadow alloc] init] autorelease];
+    self.shadow = [[NSShadow alloc] init];
     [self.shadow setShadowColor:bezelColor /* [NSColor lightGrayColor] */];
     [self.shadow setShadowBlurRadius:3];
     [self.shadow setShadowOffset:NSMakeSize(1,-1)];
@@ -285,6 +281,5 @@ const double kRadius = 8.f;
     self.windowBackgroundColor = nil;
     self.bezelColor = nil;
     self.segmentedControl = nil;
-    [super dealloc];
 }
 @end

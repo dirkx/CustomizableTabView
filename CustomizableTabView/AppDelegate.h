@@ -9,13 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import "CustomizableTabView.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate> {
-    CustomizableTabView * tv;
-    NSColorWell *colorWell, *bezelColorWell;
-}
+@interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet CustomizableTabView * tv;
+@property (assign) IBOutlet NSTabView * plain;
 @property (assign) IBOutlet NSColorWell *colorWell, *bezelColorWell;
 
 -(IBAction)addItem:(id)sender;

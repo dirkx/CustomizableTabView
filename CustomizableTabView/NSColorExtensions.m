@@ -3,6 +3,8 @@
 
 
 #import "NSColorExtensions.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @implementation NSColor (CGColorAdditions)
 
@@ -14,9 +16,15 @@
     CGColorSpaceRef theColorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
     CGColorRef theColor = CGColorCreate(theColorSpace, components);
     CGColorSpaceRelease(theColorSpace);
+#if 0
     return (CGColorRef)[(id)theColor autorelease];
+#else
+    return (CGColorRef)theColor;
+#endif
 }
 
+#if 0
+// need for this long gone.
 + (NSColor*)colorWithCGColor:(CGColorRef)aColor
 {
     const CGFloat *components = CGColorGetComponents(aColor);
@@ -26,4 +34,6 @@
     CGFloat alpha = components[3];
     return [self colorWithDeviceRed:red green:green blue:blue alpha:alpha];
 }
+#endif
+
 @end

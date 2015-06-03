@@ -9,9 +9,12 @@
  Return CGColor representation of the NSColor in the RGB color space
  */
 @property (readonly) CGColorRef CGColor;
-/**
+
+
+#if 0/**
  Create new NSColor from a CGColorRef
  */
 + (NSColor*)colorWithCGColor:(CGColorRef)aColor;
+#endif
 @end
 

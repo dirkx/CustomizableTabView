@@ -10,12 +10,16 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window, tv, colorWell, bezelColorWell;
+@synthesize window = _window, tv, colorWell, bezelColorWell, plain;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     colorWell.color = tv.backgroundColor;
     bezelColorWell.color = tv.bezelColor;
+    
+    plain.layer.backgroundColor = [[NSColor blueColor] CGColor];
+    plain.layer.borderColor =[[NSColor redColor] CGColor];
+    plain.wantsLayer = YES;
     
     // [NSColor setIgnoresAlpha:NO];
     [[NSColorPanel sharedColorPanel] setShowsAlpha:YES];
@@ -24,10 +28,12 @@
 
 -(IBAction)setColour:(NSColorWell*)sender {
     tv.backgroundColor = sender.color;
+    plain.layer.backgroundColor = [sender.color CGColor];
 }
 
 -(IBAction)setBezelColour:(NSColorWell*)sender {
     tv.bezelColor = sender.color;
+    plain.layer.borderColor =[sender.color CGColor];
 }
 
 -(IBAction)addItem:(id)sender {
